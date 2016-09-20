@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("DOM fully loaded and parsed");
+console.log("DOM fully loaded and parsed");
+
+var name = document.getElementById('name');
 
 class Student {
     fullName: string;
@@ -19,7 +21,7 @@ function greeter(person:Person) {
 
 var user = new Student("Jane", "M.", "User");
 
-document.body.innerHTML = greeter(user);
+name.innerHTML = greeter(user);
 
 //DOMContentLoaded ending parentheses
 });
