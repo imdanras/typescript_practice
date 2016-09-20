@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+
 class Student {
     fullName: string;
     constructor(public firstName, public middleInitial, public lastName) {
@@ -17,3 +20,6 @@ function greeter(person:Person) {
 var user = new Student("Jane", "M.", "User");
 
 document.body.innerHTML = greeter(user);
+
+//DOMContentLoaded ending parentheses
+});
