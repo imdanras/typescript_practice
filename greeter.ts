@@ -52,11 +52,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var questionCounter: number = 0;
     var start = document.getElementById('start');
     var question = document.getElementById('question');
+    var buttonA = document.getElementById('btn-A');
+    var buttonB = document.getElementById('btn-B');
+    
+    //Hide buttons to start
+    buttonA.style.visibility = 'hidden';
+    buttonB.style.visibility = 'hidden';
 
     var questionDisplay = function() {
+        buttonA.style.visibility = 'visible';
+        buttonB.style.visibility = 'visible';
         question.textContent = questionsArray[questionCounter].question;
-        console.log(questionsArray[questionCounter].question);
-        questionCounter++;
+        buttonA.textContent = questionsArray[questionCounter].choices[0];
+        buttonB.textContent = questionsArray[questionCounter].choices[1];
+        if (questionCounter == questionsArray.length-1) {
+            //eventually put function to either show correct answers number or simply restart quiz, but until then...
+            questionCounter = 0;
+        } else {
+            questionCounter++;
+        }
     }
 
     start.addEventListener('click', questionDisplay);
