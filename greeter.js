@@ -44,15 +44,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var question = document.getElementById('question');
     var buttonA = document.getElementById('btn-A');
     var buttonB = document.getElementById('btn-B');
+    var buttonC = document.getElementById('btn-C');
+    var buttonD = document.getElementById('btn-D');
+    var answerBtns = document.getElementById('answerBtns');
     //Hide buttons to start
-    buttonA.style.visibility = 'hidden';
-    buttonB.style.visibility = 'hidden';
+    answerBtns.style.visibility = 'hidden';
+    // buttonA.style.visibility = 'hidden';
+    // buttonB.style.visibility = 'hidden';
     var questionDisplay = function () {
-        buttonA.style.visibility = 'visible';
-        buttonB.style.visibility = 'visible';
+        answerBtns.style.visibility = 'visible';
+        // buttonB.style.visibility = 'visible';
         question.textContent = questionsArray[questionCounter].question;
         buttonA.textContent = questionsArray[questionCounter].choices[0];
         buttonB.textContent = questionsArray[questionCounter].choices[1];
+        buttonC.textContent = questionsArray[questionCounter].choices[2];
+        buttonD.textContent = questionsArray[questionCounter].choices[3];
         if (questionCounter == questionsArray.length - 1) {
             //eventually put function to either show correct answers number or simply restart quiz, but until then...
             questionCounter = 0;
